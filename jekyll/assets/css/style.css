@@ -145,7 +145,7 @@ h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
 }
 
 .tag:hover::after {
-   border-left-color: #232c47;
+   border-left-color: crimson;
 }
 
 
