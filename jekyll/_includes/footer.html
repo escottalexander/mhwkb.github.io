@@ -67,10 +67,33 @@
   <script>
     window.jQuery || document.write('<script src="{{ site.url }}/assets/js/jquery-2.2.4.min.js"><\/script>')
   </script>
+  <!--tag cloud-->
+<script src="{{ site.url }}/assets/js/jquery.tagcanvas.js"></script>
+  <script type="text/javascript">
+ $(document).ready(function() {
+   $('#myCanvas').tagcanvas({
+     textColour : #ffffff,
+     outlineColour : null,
+     outlineThickness : 1,
+     maxSpeed : 0.03,
+     depth : 0.75
+   });
+ });
+ </script>
+  <script type="text/javascript">
+  window.onload = function() {
+    try {
+      TagCanvas.Start('myCanvas');
+    } catch(e) {
+      // something went wrong, hide the canvas container
+      document.getElementById('myCanvasContainer').style.display = 'none';
+    }
+  };
+ </script>
   <!-- Latest compiled and minified Bootstrap JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <!-- Bootstrap local fallback -->
-  <div id="bootstrapCssTest" class="hidden"></div>
+ <div id="bootstrapCssTest" class="hidden"></div>
   <script>
     $(function() {
       if ($('#bootstrapCssTest').is(':visible')) {

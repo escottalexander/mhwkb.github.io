@@ -4,14 +4,23 @@ title: Tag cloud
 ---
 <div class="container">
   <h1>Tag Cloud</h1>
-  {% assign tags = site.tags | sort %}
-  {% for tag in tags %}
-    <span class="site-tag">
+  <div id="myCanvasContainer">
+   <canvas width="600" height="600" style="width: 100%" id="myCanvas">
+    <ul>
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+    <li class="site-tag">
       <a href="/tag/{{ tag | first | slugify }}/"
-          style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
-              {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
-      </a>
-    </span>
+      style="font-size: {{ tag | first | size  |  times: 2 | plus: 80  }}%">
+      {{ tag[0] | replace:'-', ' ' }} ({{ tag | first | size }})
+    </a>
+  </li>
   {% endfor %}
-  </p></p>
+</ul>
+</canvas>
 </div>
+</p></p>
+</div>
+
+
+
