@@ -5,13 +5,13 @@ title: Tag cloud
 <div class="container">
   <h1>Tag Cloud</h1>
   <div id="myCanvasContainer">
-   <canvas width="600" height="600" style="width: 100%" id="myCanvas">
+   <canvas width="600" height="275" style="width: 100%" id="myCanvas">
     <ul>
     {% assign tags = site.tags | sort %}
     {% for tag in tags %}
     <li class="site-tag">
       <a href="/tag/{{ tag | first | slugify }}/"
-      style="font-size: {{ tag | first | size  |  times: 2 | plus: 80  }}%">
+      style="font-size: {{ tag | last | size  |  times: 2 | plus: 80  }}%">
       {{ tag[0] | replace:'-', ' ' }} ({{ tag | first | size }})
     </a>
   </li>
